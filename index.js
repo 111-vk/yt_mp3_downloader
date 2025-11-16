@@ -48,8 +48,8 @@ app.post('/download', async (req, res) => {
 
         send({ status: 'fetching', message: 'Getting video info...' });
 
-        // const cmd = `yt-dlp -x --audio-format mp3 --audio-quality 192K -o "${filepath}" "${normalizedUrl}"`;
-        const cmd = `yt-dlp --cookies-from-browser :default -x --audio-format mp3 --audio-quality 192K -o "${filepath}" "${normalizedUrl}"`;
+        const cmd = `yt-dlp -x --audio-format mp3 --audio-quality 192K -o "${filepath}" "${normalizedUrl}"`;
+        // const cmd = `yt-dlp --cookies-from-browser :default -x --audio-format mp3 --audio-quality 192K -o "${filepath}" "${normalizedUrl}"`;
 
         const child = exec(cmd);
 
