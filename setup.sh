@@ -118,11 +118,10 @@ if command -v yt-dlp >/dev/null 2>&1; then
     log "yt-dlp found: v$YTDLP_VER"
 
     echo -n "Checking for yt-dlp updates... "
-    if yt-dlp -U --quiet >/dev/null 2>&1; then
-        echo ""
-        log "yt-dlp updated to latest version."
+    if pip install --upgrade yt-dlp >/dev/null 2>&1; then
+        log "yt-dlp updated successfully."
     else
-        log "yt-dlp is up to date."
+        log "No updates available."
     fi
 else
     warn "yt-dlp not installed. Installing now..."
