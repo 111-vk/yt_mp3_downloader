@@ -89,18 +89,27 @@ fi
 echo "Checking YT MP3 Downloader Requirements..."
 echo "----------------------------------------"
 
-# Path to your virtual environment
-VENV_DIR="myenv"
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+VENV_DIR="$SCRIPT_DIR/myenv"
 
-# Check if venv exists
+# Create venv if not exists
 if [ ! -d "$VENV_DIR" ]; then
     echo "Virtual environment not found. Creating one..."
     python3 -m venv "$VENV_DIR"
 fi
 
-# Activate it
+# Activate venv
 echo "Activating virtual environment..."
 source "$VENV_DIR/bin/activate"
+
+# Export venv bin so Node can use it
+export PATH="$VENV_DIR/bin:$PATH"
+
+# Show confirmation
+echo "Python venv active."
+echo "Using venv bin at: $VENV_DIR/bin"
+echo "PATH updated so Node.js can find yt-dlp."
+
 
 
 # 4. yt-dlp
