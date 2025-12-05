@@ -64,9 +64,6 @@ ${BOLD}First-Time Setup:${NC}
        • Check FFmpeg
        • Offer to start the server
 
-${BOLD}Support the developer:${NC}
-      Star on GitHub: https://github.com/yourname/ytmp3-downloader
-      Buy me a coffee: https://ko-fi.com/yourname
 
 Enjoy your music offline!
 
