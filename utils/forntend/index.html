@@ -6,41 +6,85 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>YT MP3 Downloader</title>
     <link rel="stylesheet" href="style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
-
     <div id="root">
+        <div class="background-gradient"></div>
 
         <div class="container">
-            <header>
-                <h1>YT MP3 Downloader</h1>
-                <button id="themeToggle">Dark Mode</button>
+            <!-- Header -->
+            <header class="header">
+                <div class="header-content">
+                    <div class="logo-section">
+                        <!-- <i class="fas fa-music logo-icon"></i> -->
+                        <h1 class="title">YT MP3 Downloader</h1>
+                    </div>
+                    <!-- <p class="tagline">Convert YouTube videos to MP3 instantly</p> -->
+                </div>
+                <button id="themeToggle" class="theme-toggle" title="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
             </header>
 
-            <main>
-                <div class="input-group">
-                    <input type="text" id="urlInput" placeholder="Paste YouTube link here..." />
-                    <button id="downloadBtn">Download MP3</button>
-                </div>
-
-                <div id="progressContainer" class="hidden">
-                    <div class="progress-bar">
-                        <div id="progressFill"></div>
+            <!-- Main Content -->
+            <main class="main">
+                <!-- Input Section -->
+                <div class="input-section">
+                    <div class="input-group">
+                        <div class="input-wrapper">
+                            <i class="fas fa-link input-icon"></i>
+                            <input type="text" id="urlInput" class="url-input"
+                                placeholder="Paste your YouTube link here..." autocomplete="off" />
+                        </div>
+                        <button id="downloadBtn" class="download-btn">
+                            <i class="fas fa-download"></i>
+                            <span>Download MP3</span>
+                        </button>
                     </div>
-                    <p id="progressText">Preparing...</p>
+                    <p class="info-text">
+                        <i class="fas fa-info-circle"></i>
+                        Paste any YouTube URL and we'll convert it to MP3
+                    </p>
                 </div>
 
-                <div id="result" class="hidden"></div>
+                <!-- Progress Section -->
+                <div id="progressContainer" class="progress-section hidden">
+                    <div class="progress-info">
+                        <p id="progressText" class="progress-text">Preparing...</p>
+                        <span class="spinner"></span>
+                    </div>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar">
+                            <div id="progressFill" class="progress-fill"></div>
+                        </div>
+                        <p class="progress-percentage">
+                            <span id="progressPercent">0</span>%
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Result Section -->
+                <div id="result" class="result-section hidden">
+                    <div class="result-content"></div>
+                </div>
             </main>
 
-            <footer>
-                <p>For personal use only. Respect copyright.</p>
+            <!-- Footer -->
+            <footer class="footer">
+                <p class="copyright-text">
+                    <i class="fas fa-shield-alt"></i>
+                    For personal use only. Please respect copyright and creators' rights.
+                    <br>
+                <p onclick="showDocumentation()" id="help">help</p>
+
+                </p>
             </footer>
         </div>
-
     </div>
+
     <script src="script.js"></script>
 </body>
 
