@@ -29,7 +29,7 @@ start_app() {
 
     echo "Started! PID: $PID"
     echo "Logs: $LOG_FILE"
-    echo "the server started successfully. You can now close this window. The server will continue to run in the background."
+    echo "the server started successfully. You can now close this window. The server will continue to run in the background. at: http://localhost:3000"
 }
 
 stop_app() {
